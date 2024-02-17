@@ -3,9 +3,9 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
-    app.quarkus.io/commit-id: 2021fb48ef37c51848fda7d84e45291c416a93d3
+    app.quarkus.io/commit-id: 30245b62a074cd418ddfd0cd279fe40fc46e1784
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-    app.quarkus.io/build-timestamp: 2024-02-17 - 11:13:51 +0000
+    app.quarkus.io/build-timestamp: 2024-02-17 - 11:29:18 +0000
   labels:
     app.kubernetes.io/name: contestsubmission-backend
     app.kubernetes.io/version: 2.6.1
@@ -93,9 +93,9 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    app.quarkus.io/commit-id: 2021fb48ef37c51848fda7d84e45291c416a93d3
+    app.quarkus.io/commit-id: 30245b62a074cd418ddfd0cd279fe40fc46e1784
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-    app.quarkus.io/build-timestamp: 2024-02-17 - 11:13:51 +0000
+    app.quarkus.io/build-timestamp: 2024-02-17 - 11:29:18 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8080"
@@ -120,9 +120,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    app.quarkus.io/commit-id: 2021fb48ef37c51848fda7d84e45291c416a93d3
+    app.quarkus.io/commit-id: 30245b62a074cd418ddfd0cd279fe40fc46e1784
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-    app.quarkus.io/build-timestamp: 2024-02-17 - 11:13:51 +0000
+    app.quarkus.io/build-timestamp: 2024-02-17 - 11:29:18 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8080"
@@ -136,22 +136,22 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/version: 2.6.1
       app.kubernetes.io/name: contestsubmission-backend
+      app.kubernetes.io/version: 2.6.1
   template:
     metadata:
       annotations:
-        app.quarkus.io/commit-id: 2021fb48ef37c51848fda7d84e45291c416a93d3
+        app.quarkus.io/commit-id: 30245b62a074cd418ddfd0cd279fe40fc46e1784
         app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-        app.quarkus.io/build-timestamp: 2024-02-17 - 11:13:51 +0000
+        app.quarkus.io/build-timestamp: 2024-02-17 - 11:29:18 +0000
         prometheus.io/scrape: "true"
         prometheus.io/path: /q/metrics
         prometheus.io/port: "8080"
         prometheus.io/scheme: http
       labels:
         app.kubernetes.io/managed-by: quarkus
-        app.kubernetes.io/version: 2.6.1
         app.kubernetes.io/name: contestsubmission-backend
+        app.kubernetes.io/version: 2.6.1
     spec:
       containers:
         - env:
@@ -162,15 +162,15 @@ spec:
             - name: QUARKUS_FLYWAY_ENABLED
               value: "false"
           envFrom:
+            - secretRef:
+                name: backend-s3-secret
             - configMapRef:
                 name: postgres-config
             - secretRef:
-                name: postgres-secret
-            - secretRef:
                 name: backend-oidc-secret
             - secretRef:
-                name: backend-s3-secret
-          image: ghcr.io/contestsubmission/contestsubmission-backend:2.6.1-102
+                name: postgres-secret
+          image: ghcr.io/contestsubmission/contestsubmission-backend:2.6.1-103
           imagePullPolicy: Always
           name: contestsubmission-backend
           ports:
@@ -202,15 +202,15 @@ spec:
             - name: QUARKUS_FLYWAY_ENABLED
               value: "true"
           envFrom:
+            - secretRef:
+                name: backend-s3-secret
             - configMapRef:
                 name: postgres-config
             - secretRef:
-                name: postgres-secret
-            - secretRef:
                 name: backend-oidc-secret
             - secretRef:
-                name: backend-s3-secret
-          image: ghcr.io/contestsubmission/contestsubmission-backend:2.6.1-102
+                name: postgres-secret
+          image: ghcr.io/contestsubmission/contestsubmission-backend:2.6.1-103
           name: contestsubmission-backend-flyway-init
       restartPolicy: OnFailure
       serviceAccountName: contestsubmission-backend
