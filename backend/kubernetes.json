@@ -3,8 +3,9 @@
   "kind" : "ServiceAccount",
   "metadata" : {
     "annotations" : {
+      "app.quarkus.io/commit-id" : "294e9b362658c46797afed10b1a67bc7f9b934fb",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend",
-      "app.quarkus.io/build-timestamp" : "2024-02-21 - 15:05:40 +0000"
+      "app.quarkus.io/build-timestamp" : "2024-02-21 - 17:57:17 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
@@ -107,8 +108,9 @@
   "kind" : "Service",
   "metadata" : {
     "annotations" : {
+      "app.quarkus.io/commit-id" : "294e9b362658c46797afed10b1a67bc7f9b934fb",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend",
-      "app.quarkus.io/build-timestamp" : "2024-02-21 - 15:05:40 +0000",
+      "app.quarkus.io/build-timestamp" : "2024-02-21 - 17:57:17 +0000",
       "prometheus.io/scrape" : "true",
       "prometheus.io/path" : "/q/metrics",
       "prometheus.io/port" : "8080",
@@ -138,8 +140,9 @@
   "kind" : "Deployment",
   "metadata" : {
     "annotations" : {
+      "app.quarkus.io/commit-id" : "294e9b362658c46797afed10b1a67bc7f9b934fb",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend",
-      "app.quarkus.io/build-timestamp" : "2024-02-21 - 15:05:40 +0000",
+      "app.quarkus.io/build-timestamp" : "2024-02-21 - 17:57:17 +0000",
       "prometheus.io/scrape" : "true",
       "prometheus.io/path" : "/q/metrics",
       "prometheus.io/port" : "8080",
@@ -162,8 +165,9 @@
     "template" : {
       "metadata" : {
         "annotations" : {
+          "app.quarkus.io/commit-id" : "294e9b362658c46797afed10b1a67bc7f9b934fb",
           "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend",
-          "app.quarkus.io/build-timestamp" : "2024-02-21 - 15:05:40 +0000",
+          "app.quarkus.io/build-timestamp" : "2024-02-21 - 17:57:17 +0000",
           "prometheus.io/scrape" : "true",
           "prometheus.io/path" : "/q/metrics",
           "prometheus.io/port" : "8080",
@@ -189,27 +193,27 @@
             "value" : "false"
           } ],
           "envFrom" : [ {
+            "secretRef" : {
+              "name" : "backend-s3-secret"
+            }
+          }, {
             "configMapRef" : {
               "name" : "backend-config"
             }
           }, {
-            "configMapRef" : {
-              "name" : "postgres-config"
-            }
-          }, {
             "secretRef" : {
-              "name" : "backend-s3-secret"
+              "name" : "backend-oidc-secret"
             }
           }, {
             "secretRef" : {
               "name" : "postgres-secret"
             }
           }, {
-            "secretRef" : {
-              "name" : "backend-oidc-secret"
+            "configMapRef" : {
+              "name" : "postgres-config"
             }
           } ],
-          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:2.8.0-137",
+          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:2.8.0-140",
           "imagePullPolicy" : "Always",
           "name" : "contestsubmission-backend",
           "ports" : [ {
@@ -248,27 +252,27 @@
             "value" : "true"
           } ],
           "envFrom" : [ {
+            "secretRef" : {
+              "name" : "backend-s3-secret"
+            }
+          }, {
             "configMapRef" : {
               "name" : "backend-config"
             }
           }, {
-            "configMapRef" : {
-              "name" : "postgres-config"
-            }
-          }, {
             "secretRef" : {
-              "name" : "backend-s3-secret"
+              "name" : "backend-oidc-secret"
             }
           }, {
             "secretRef" : {
               "name" : "postgres-secret"
             }
           }, {
-            "secretRef" : {
-              "name" : "backend-oidc-secret"
+            "configMapRef" : {
+              "name" : "postgres-config"
             }
           } ],
-          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:2.8.0-137",
+          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:2.8.0-140",
           "name" : "contestsubmission-backend-flyway-init"
         } ],
         "restartPolicy" : "OnFailure",
