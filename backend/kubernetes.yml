@@ -5,7 +5,7 @@ metadata:
   annotations:
     app.quarkus.io/commit-id: 294e9b362658c46797afed10b1a67bc7f9b934fb
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-    app.quarkus.io/build-timestamp: 2024-02-21 - 17:57:17 +0000
+    app.quarkus.io/build-timestamp: 2024-02-21 - 20:54:07 +0000
   labels:
     app.kubernetes.io/name: contestsubmission-backend
     app.kubernetes.io/version: 2.8.0
@@ -95,7 +95,7 @@ metadata:
   annotations:
     app.quarkus.io/commit-id: 294e9b362658c46797afed10b1a67bc7f9b934fb
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-    app.quarkus.io/build-timestamp: 2024-02-21 - 17:57:17 +0000
+    app.quarkus.io/build-timestamp: 2024-02-21 - 20:54:07 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8080"
@@ -121,7 +121,7 @@ metadata:
   annotations:
     app.quarkus.io/commit-id: 294e9b362658c46797afed10b1a67bc7f9b934fb
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-    app.quarkus.io/build-timestamp: 2024-02-21 - 17:57:17 +0000
+    app.quarkus.io/build-timestamp: 2024-02-21 - 20:54:07 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8080"
@@ -141,15 +141,15 @@ spec:
       annotations:
         app.quarkus.io/commit-id: 294e9b362658c46797afed10b1a67bc7f9b934fb
         app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-        app.quarkus.io/build-timestamp: 2024-02-21 - 17:57:17 +0000
+        app.quarkus.io/build-timestamp: 2024-02-21 - 20:54:07 +0000
         prometheus.io/scrape: "true"
         prometheus.io/path: /q/metrics
         prometheus.io/port: "8080"
         prometheus.io/scheme: http
       labels:
         app.kubernetes.io/managed-by: quarkus
-        app.kubernetes.io/name: contestsubmission-backend
         app.kubernetes.io/version: 2.8.0
+        app.kubernetes.io/name: contestsubmission-backend
     spec:
       containers:
         - env:
@@ -162,15 +162,15 @@ spec:
           envFrom:
             - secretRef:
                 name: backend-s3-secret
-            - configMapRef:
-                name: backend-config
             - secretRef:
                 name: backend-oidc-secret
             - secretRef:
                 name: postgres-secret
             - configMapRef:
                 name: postgres-config
-          image: ghcr.io/contestsubmission/contestsubmission-backend:2.8.0-140
+            - configMapRef:
+                name: backend-config
+          image: ghcr.io/contestsubmission/contestsubmission-backend:2.8.0-143
           imagePullPolicy: Always
           name: contestsubmission-backend
           ports:
@@ -197,22 +197,22 @@ spec:
     spec:
       containers:
         - env:
-            - name: QUARKUS_FLYWAY_ENABLED
-              value: "true"
             - name: QUARKUS_INIT_AND_EXIT
+              value: "true"
+            - name: QUARKUS_FLYWAY_ENABLED
               value: "true"
           envFrom:
             - secretRef:
                 name: backend-s3-secret
-            - configMapRef:
-                name: backend-config
             - secretRef:
                 name: backend-oidc-secret
             - secretRef:
                 name: postgres-secret
             - configMapRef:
                 name: postgres-config
-          image: ghcr.io/contestsubmission/contestsubmission-backend:2.8.0-140
+            - configMapRef:
+                name: backend-config
+          image: ghcr.io/contestsubmission/contestsubmission-backend:2.8.0-143
           name: contestsubmission-backend-flyway-init
       restartPolicy: OnFailure
       serviceAccountName: contestsubmission-backend
