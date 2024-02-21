@@ -3,9 +3,9 @@
   "kind" : "ServiceAccount",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/commit-id" : "d4ac096886b94f11c7f88e3ea610f2339a170cf2",
+      "app.quarkus.io/commit-id" : "566b9b63a356c085a5b0f0c8bfff02d97dc36d48",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend",
-      "app.quarkus.io/build-timestamp" : "2024-02-21 - 17:55:10 +0000"
+      "app.quarkus.io/build-timestamp" : "2024-02-21 - 18:01:06 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
@@ -108,9 +108,9 @@
   "kind" : "Service",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/commit-id" : "d4ac096886b94f11c7f88e3ea610f2339a170cf2",
+      "app.quarkus.io/commit-id" : "566b9b63a356c085a5b0f0c8bfff02d97dc36d48",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend",
-      "app.quarkus.io/build-timestamp" : "2024-02-21 - 17:55:10 +0000",
+      "app.quarkus.io/build-timestamp" : "2024-02-21 - 18:01:06 +0000",
       "prometheus.io/scrape" : "true",
       "prometheus.io/path" : "/q/metrics",
       "prometheus.io/port" : "8080",
@@ -140,9 +140,9 @@
   "kind" : "Deployment",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/commit-id" : "d4ac096886b94f11c7f88e3ea610f2339a170cf2",
+      "app.quarkus.io/commit-id" : "566b9b63a356c085a5b0f0c8bfff02d97dc36d48",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend",
-      "app.quarkus.io/build-timestamp" : "2024-02-21 - 17:55:10 +0000",
+      "app.quarkus.io/build-timestamp" : "2024-02-21 - 18:01:06 +0000",
       "prometheus.io/scrape" : "true",
       "prometheus.io/path" : "/q/metrics",
       "prometheus.io/port" : "8080",
@@ -165,9 +165,9 @@
     "template" : {
       "metadata" : {
         "annotations" : {
-          "app.quarkus.io/commit-id" : "d4ac096886b94f11c7f88e3ea610f2339a170cf2",
+          "app.quarkus.io/commit-id" : "566b9b63a356c085a5b0f0c8bfff02d97dc36d48",
           "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend",
-          "app.quarkus.io/build-timestamp" : "2024-02-21 - 17:55:10 +0000",
+          "app.quarkus.io/build-timestamp" : "2024-02-21 - 18:01:06 +0000",
           "prometheus.io/scrape" : "true",
           "prometheus.io/path" : "/q/metrics",
           "prometheus.io/port" : "8080",
@@ -175,8 +175,8 @@
         },
         "labels" : {
           "app.kubernetes.io/managed-by" : "quarkus",
-          "app.kubernetes.io/name" : "contestsubmission-backend",
-          "app.kubernetes.io/version" : "2.7.3"
+          "app.kubernetes.io/version" : "2.7.3",
+          "app.kubernetes.io/name" : "contestsubmission-backend"
         }
       },
       "spec" : {
@@ -193,6 +193,14 @@
             "value" : "false"
           } ],
           "envFrom" : [ {
+            "secretRef" : {
+              "name" : "backend-oidc-secret"
+            }
+          }, {
+            "secretRef" : {
+              "name" : "postgres-secret"
+            }
+          }, {
             "configMapRef" : {
               "name" : "backend-config"
             }
@@ -201,19 +209,11 @@
               "name" : "backend-s3-secret"
             }
           }, {
-            "secretRef" : {
-              "name" : "postgres-secret"
-            }
-          }, {
             "configMapRef" : {
               "name" : "postgres-config"
             }
-          }, {
-            "secretRef" : {
-              "name" : "backend-oidc-secret"
-            }
           } ],
-          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:2.7.3-138",
+          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:2.7.3-141",
           "imagePullPolicy" : "Always",
           "name" : "contestsubmission-backend",
           "ports" : [ {
@@ -245,13 +245,21 @@
       "spec" : {
         "containers" : [ {
           "env" : [ {
-            "name" : "QUARKUS_INIT_AND_EXIT",
+            "name" : "QUARKUS_FLYWAY_ENABLED",
             "value" : "true"
           }, {
-            "name" : "QUARKUS_FLYWAY_ENABLED",
+            "name" : "QUARKUS_INIT_AND_EXIT",
             "value" : "true"
           } ],
           "envFrom" : [ {
+            "secretRef" : {
+              "name" : "backend-oidc-secret"
+            }
+          }, {
+            "secretRef" : {
+              "name" : "postgres-secret"
+            }
+          }, {
             "configMapRef" : {
               "name" : "backend-config"
             }
@@ -260,19 +268,11 @@
               "name" : "backend-s3-secret"
             }
           }, {
-            "secretRef" : {
-              "name" : "postgres-secret"
-            }
-          }, {
             "configMapRef" : {
               "name" : "postgres-config"
             }
-          }, {
-            "secretRef" : {
-              "name" : "backend-oidc-secret"
-            }
           } ],
-          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:2.7.3-138",
+          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:2.7.3-141",
           "name" : "contestsubmission-backend-flyway-init"
         } ],
         "restartPolicy" : "OnFailure",
