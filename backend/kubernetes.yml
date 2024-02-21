@@ -3,11 +3,12 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
+    app.quarkus.io/commit-id: d4ac096886b94f11c7f88e3ea610f2339a170cf2
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-    app.quarkus.io/build-timestamp: 2024-02-18 - 23:41:05 +0000
+    app.quarkus.io/build-timestamp: 2024-02-21 - 17:55:10 +0000
   labels:
     app.kubernetes.io/name: contestsubmission-backend
-    app.kubernetes.io/version: 2.7.2
+    app.kubernetes.io/version: 2.7.3
     app.kubernetes.io/managed-by: quarkus
   name: contestsubmission-backend
 ---
@@ -16,7 +17,7 @@ kind: Role
 metadata:
   labels:
     app.kubernetes.io/name: contestsubmission-backend
-    app.kubernetes.io/version: 2.7.2
+    app.kubernetes.io/version: 2.7.3
   name: view-secrets
 rules:
   - apiGroups:
@@ -31,7 +32,7 @@ kind: Role
 metadata:
   labels:
     app.kubernetes.io/name: contestsubmission-backend
-    app.kubernetes.io/version: 2.7.2
+    app.kubernetes.io/version: 2.7.3
   name: view-jobs
 rules:
   - apiGroups:
@@ -46,7 +47,7 @@ kind: RoleBinding
 metadata:
   labels:
     app.kubernetes.io/name: contestsubmission-backend
-    app.kubernetes.io/version: 2.7.2
+    app.kubernetes.io/version: 2.7.3
   name: contestsubmission-backend-view-secrets
 roleRef:
   kind: Role
@@ -62,7 +63,7 @@ kind: RoleBinding
 metadata:
   labels:
     app.kubernetes.io/name: contestsubmission-backend
-    app.kubernetes.io/version: 2.7.2
+    app.kubernetes.io/version: 2.7.3
   name: contestsubmission-backend-view-jobs
 roleRef:
   kind: Role
@@ -78,7 +79,7 @@ kind: RoleBinding
 metadata:
   labels:
     app.kubernetes.io/name: contestsubmission-backend
-    app.kubernetes.io/version: 2.7.2
+    app.kubernetes.io/version: 2.7.3
   name: contestsubmission-backend-view
 roleRef:
   kind: ClusterRole
@@ -92,15 +93,16 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
+    app.quarkus.io/commit-id: d4ac096886b94f11c7f88e3ea610f2339a170cf2
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-    app.quarkus.io/build-timestamp: 2024-02-18 - 23:41:05 +0000
+    app.quarkus.io/build-timestamp: 2024-02-21 - 17:55:10 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8080"
     prometheus.io/scheme: http
   labels:
     app.kubernetes.io/name: contestsubmission-backend
-    app.kubernetes.io/version: 2.7.2
+    app.kubernetes.io/version: 2.7.3
     app.kubernetes.io/managed-by: quarkus
   name: contestsubmission-backend
 spec:
@@ -117,15 +119,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
+    app.quarkus.io/commit-id: d4ac096886b94f11c7f88e3ea610f2339a170cf2
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-    app.quarkus.io/build-timestamp: 2024-02-18 - 23:41:05 +0000
+    app.quarkus.io/build-timestamp: 2024-02-21 - 17:55:10 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8080"
     prometheus.io/scheme: http
   labels:
     app.kubernetes.io/name: contestsubmission-backend
-    app.kubernetes.io/version: 2.7.2
+    app.kubernetes.io/version: 2.7.3
     app.kubernetes.io/managed-by: quarkus
   name: contestsubmission-backend
 spec:
@@ -136,16 +139,17 @@ spec:
   template:
     metadata:
       annotations:
+        app.quarkus.io/commit-id: d4ac096886b94f11c7f88e3ea610f2339a170cf2
         app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-        app.quarkus.io/build-timestamp: 2024-02-18 - 23:41:05 +0000
+        app.quarkus.io/build-timestamp: 2024-02-21 - 17:55:10 +0000
         prometheus.io/scrape: "true"
         prometheus.io/path: /q/metrics
         prometheus.io/port: "8080"
         prometheus.io/scheme: http
       labels:
         app.kubernetes.io/managed-by: quarkus
-        app.kubernetes.io/version: 2.7.2
         app.kubernetes.io/name: contestsubmission-backend
+        app.kubernetes.io/version: 2.7.3
     spec:
       containers:
         - env:
@@ -156,17 +160,17 @@ spec:
             - name: QUARKUS_FLYWAY_ENABLED
               value: "false"
           envFrom:
-            - secretRef:
-                name: backend-oidc-secret
-            - secretRef:
-                name: postgres-secret
-            - secretRef:
-                name: backend-s3-secret
-            - configMapRef:
-                name: postgres-config
             - configMapRef:
                 name: backend-config
-          image: ghcr.io/contestsubmission/contestsubmission-backend:2.7.2-135
+            - secretRef:
+                name: backend-s3-secret
+            - secretRef:
+                name: postgres-secret
+            - configMapRef:
+                name: postgres-config
+            - secretRef:
+                name: backend-oidc-secret
+          image: ghcr.io/contestsubmission/contestsubmission-backend:2.7.3-138
           imagePullPolicy: Always
           name: contestsubmission-backend
           ports:
@@ -193,22 +197,22 @@ spec:
     spec:
       containers:
         - env:
-            - name: QUARKUS_FLYWAY_ENABLED
-              value: "true"
             - name: QUARKUS_INIT_AND_EXIT
               value: "true"
+            - name: QUARKUS_FLYWAY_ENABLED
+              value: "true"
           envFrom:
-            - secretRef:
-                name: backend-oidc-secret
-            - secretRef:
-                name: postgres-secret
-            - secretRef:
-                name: backend-s3-secret
-            - configMapRef:
-                name: postgres-config
             - configMapRef:
                 name: backend-config
-          image: ghcr.io/contestsubmission/contestsubmission-backend:2.7.2-135
+            - secretRef:
+                name: backend-s3-secret
+            - secretRef:
+                name: postgres-secret
+            - configMapRef:
+                name: postgres-config
+            - secretRef:
+                name: backend-oidc-secret
+          image: ghcr.io/contestsubmission/contestsubmission-backend:2.7.3-138
           name: contestsubmission-backend-flyway-init
       restartPolicy: OnFailure
       serviceAccountName: contestsubmission-backend
