@@ -3,9 +3,8 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
-    app.quarkus.io/commit-id: e6abe979b1b734f1f0bb6202c42bbb85046b1822
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-    app.quarkus.io/build-timestamp: 2024-02-25 - 14:25:54 +0000
+    app.quarkus.io/build-timestamp: 2024-02-25 - 17:52:05 +0000
   labels:
     app.kubernetes.io/name: contestsubmission-backend
     app.kubernetes.io/version: 3.0.0
@@ -62,9 +61,8 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    app.quarkus.io/commit-id: e6abe979b1b734f1f0bb6202c42bbb85046b1822
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-    app.quarkus.io/build-timestamp: 2024-02-25 - 14:25:54 +0000
+    app.quarkus.io/build-timestamp: 2024-02-25 - 17:52:05 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8080"
@@ -88,9 +86,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    app.quarkus.io/commit-id: e6abe979b1b734f1f0bb6202c42bbb85046b1822
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-    app.quarkus.io/build-timestamp: 2024-02-25 - 14:25:54 +0000
+    app.quarkus.io/build-timestamp: 2024-02-25 - 17:52:05 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8080"
@@ -108,9 +105,8 @@ spec:
   template:
     metadata:
       annotations:
-        app.quarkus.io/commit-id: e6abe979b1b734f1f0bb6202c42bbb85046b1822
         app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend
-        app.quarkus.io/build-timestamp: 2024-02-25 - 14:25:54 +0000
+        app.quarkus.io/build-timestamp: 2024-02-25 - 17:52:05 +0000
         prometheus.io/scrape: "true"
         prometheus.io/path: /q/metrics
         prometheus.io/port: "8080"
@@ -129,7 +125,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: postgres-config
-          image: ghcr.io/contestsubmission/contestsubmission-backend:3.0.0-148
+          image: ghcr.io/contestsubmission/contestsubmission-backend:3.0.0-149
           imagePullPolicy: Always
           name: contestsubmission-backend
           ports:
