@@ -3,8 +3,9 @@
   "kind" : "ServiceAccount",
   "metadata" : {
     "annotations" : {
+      "app.quarkus.io/commit-id" : "175ec5f6894e96e2b1d00d14e8e3aa87e6f2b035",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend",
-      "app.quarkus.io/build-timestamp" : "2024-02-25 - 17:52:05 +0000"
+      "app.quarkus.io/build-timestamp" : "2024-02-29 - 23:13:43 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
@@ -72,8 +73,9 @@
   "kind" : "Service",
   "metadata" : {
     "annotations" : {
+      "app.quarkus.io/commit-id" : "175ec5f6894e96e2b1d00d14e8e3aa87e6f2b035",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend",
-      "app.quarkus.io/build-timestamp" : "2024-02-25 - 17:52:05 +0000",
+      "app.quarkus.io/build-timestamp" : "2024-02-29 - 23:13:43 +0000",
       "prometheus.io/scrape" : "true",
       "prometheus.io/path" : "/q/metrics",
       "prometheus.io/port" : "8080",
@@ -103,8 +105,9 @@
   "kind" : "Deployment",
   "metadata" : {
     "annotations" : {
+      "app.quarkus.io/commit-id" : "175ec5f6894e96e2b1d00d14e8e3aa87e6f2b035",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend",
-      "app.quarkus.io/build-timestamp" : "2024-02-25 - 17:52:05 +0000",
+      "app.quarkus.io/build-timestamp" : "2024-02-29 - 23:13:43 +0000",
       "prometheus.io/scrape" : "true",
       "prometheus.io/path" : "/q/metrics",
       "prometheus.io/port" : "8080",
@@ -127,8 +130,9 @@
     "template" : {
       "metadata" : {
         "annotations" : {
+          "app.quarkus.io/commit-id" : "175ec5f6894e96e2b1d00d14e8e3aa87e6f2b035",
           "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend",
-          "app.quarkus.io/build-timestamp" : "2024-02-25 - 17:52:05 +0000",
+          "app.quarkus.io/build-timestamp" : "2024-02-29 - 23:13:43 +0000",
           "prometheus.io/scrape" : "true",
           "prometheus.io/path" : "/q/metrics",
           "prometheus.io/port" : "8080",
@@ -155,7 +159,7 @@
               "name" : "postgres-config"
             }
           } ],
-          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:3.0.0-149",
+          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:3.0.0-150",
           "imagePullPolicy" : "Always",
           "name" : "contestsubmission-backend",
           "ports" : [ {
