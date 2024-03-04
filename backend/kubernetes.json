@@ -5,11 +5,11 @@
     "annotations" : {
       "app.quarkus.io/quarkus-version" : "3.8.1",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend.git",
-      "app.quarkus.io/build-timestamp" : "2024-03-02 - 23:13:46 +0000"
+      "app.quarkus.io/build-timestamp" : "2024-03-04 - 23:11:41 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
-      "app.kubernetes.io/version" : "3.3.1",
+      "app.kubernetes.io/version" : "3.3.2",
       "app.kubernetes.io/managed-by" : "quarkus"
     },
     "name" : "contestsubmission-backend"
@@ -20,7 +20,7 @@
   "metadata" : {
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
-      "app.kubernetes.io/version" : "3.3.1"
+      "app.kubernetes.io/version" : "3.3.2"
     },
     "name" : "view-secrets"
   },
@@ -35,7 +35,7 @@
   "metadata" : {
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
-      "app.kubernetes.io/version" : "3.3.1"
+      "app.kubernetes.io/version" : "3.3.2"
     },
     "name" : "contestsubmission-backend-view-secrets"
   },
@@ -55,7 +55,7 @@
   "metadata" : {
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
-      "app.kubernetes.io/version" : "3.3.1"
+      "app.kubernetes.io/version" : "3.3.2"
     },
     "name" : "contestsubmission-backend-view"
   },
@@ -75,7 +75,7 @@
     "annotations" : {
       "app.quarkus.io/quarkus-version" : "3.8.1",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend.git",
-      "app.quarkus.io/build-timestamp" : "2024-03-02 - 23:13:46 +0000",
+      "app.quarkus.io/build-timestamp" : "2024-03-04 - 23:11:41 +0000",
       "prometheus.io/scrape" : "true",
       "prometheus.io/path" : "/q/metrics",
       "prometheus.io/port" : "8080",
@@ -83,7 +83,7 @@
     },
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
-      "app.kubernetes.io/version" : "3.3.1",
+      "app.kubernetes.io/version" : "3.3.2",
       "app.kubernetes.io/managed-by" : "quarkus"
     },
     "name" : "contestsubmission-backend"
@@ -107,7 +107,7 @@
     "annotations" : {
       "app.quarkus.io/quarkus-version" : "3.8.1",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend.git",
-      "app.quarkus.io/build-timestamp" : "2024-03-02 - 23:13:46 +0000",
+      "app.quarkus.io/build-timestamp" : "2024-03-04 - 23:11:41 +0000",
       "prometheus.io/scrape" : "true",
       "prometheus.io/path" : "/q/metrics",
       "prometheus.io/port" : "8080",
@@ -115,7 +115,7 @@
     },
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
-      "app.kubernetes.io/version" : "3.3.1",
+      "app.kubernetes.io/version" : "3.3.2",
       "app.kubernetes.io/managed-by" : "quarkus"
     },
     "name" : "contestsubmission-backend"
@@ -132,7 +132,7 @@
         "annotations" : {
           "app.quarkus.io/quarkus-version" : "3.8.1",
           "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend.git",
-          "app.quarkus.io/build-timestamp" : "2024-03-02 - 23:13:46 +0000",
+          "app.quarkus.io/build-timestamp" : "2024-03-04 - 23:11:41 +0000",
           "prometheus.io/scrape" : "true",
           "prometheus.io/path" : "/q/metrics",
           "prometheus.io/port" : "8080",
@@ -140,8 +140,8 @@
         },
         "labels" : {
           "app.kubernetes.io/managed-by" : "quarkus",
-          "app.kubernetes.io/name" : "contestsubmission-backend",
-          "app.kubernetes.io/version" : "3.3.1"
+          "app.kubernetes.io/version" : "3.3.2",
+          "app.kubernetes.io/name" : "contestsubmission-backend"
         }
       },
       "spec" : {
@@ -159,7 +159,7 @@
               "name" : "postgres-config"
             }
           } ],
-          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:3.3.1-168",
+          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:3.3.2-170",
           "imagePullPolicy" : "Always",
           "name" : "contestsubmission-backend",
           "ports" : [ {
