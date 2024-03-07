@@ -4,13 +4,13 @@
   "metadata" : {
     "annotations" : {
       "app.quarkus.io/quarkus-version" : "3.8.1",
-      "app.quarkus.io/commit-id" : "d935ca0f8e5e5d1f80f8244559cf7f4b65eea0dd",
+      "app.quarkus.io/commit-id" : "18565d8d3e6f1b10389101981bea01cfa4a3fef2",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend.git",
-      "app.quarkus.io/build-timestamp" : "2024-03-04 - 23:11:56 +0000"
+      "app.quarkus.io/build-timestamp" : "2024-03-07 - 09:19:27 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
-      "app.kubernetes.io/version" : "3.3.2",
+      "app.kubernetes.io/version" : "3.4.0",
       "app.kubernetes.io/managed-by" : "quarkus"
     },
     "name" : "contestsubmission-backend"
@@ -21,7 +21,7 @@
   "metadata" : {
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
-      "app.kubernetes.io/version" : "3.3.2"
+      "app.kubernetes.io/version" : "3.4.0"
     },
     "name" : "view-secrets"
   },
@@ -36,7 +36,7 @@
   "metadata" : {
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
-      "app.kubernetes.io/version" : "3.3.2"
+      "app.kubernetes.io/version" : "3.4.0"
     },
     "name" : "contestsubmission-backend-view-secrets"
   },
@@ -56,7 +56,7 @@
   "metadata" : {
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
-      "app.kubernetes.io/version" : "3.3.2"
+      "app.kubernetes.io/version" : "3.4.0"
     },
     "name" : "contestsubmission-backend-view"
   },
@@ -75,9 +75,9 @@
   "metadata" : {
     "annotations" : {
       "app.quarkus.io/quarkus-version" : "3.8.1",
-      "app.quarkus.io/commit-id" : "d935ca0f8e5e5d1f80f8244559cf7f4b65eea0dd",
+      "app.quarkus.io/commit-id" : "18565d8d3e6f1b10389101981bea01cfa4a3fef2",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend.git",
-      "app.quarkus.io/build-timestamp" : "2024-03-04 - 23:11:56 +0000",
+      "app.quarkus.io/build-timestamp" : "2024-03-07 - 09:19:27 +0000",
       "prometheus.io/scrape" : "true",
       "prometheus.io/path" : "/q/metrics",
       "prometheus.io/port" : "8080",
@@ -85,7 +85,7 @@
     },
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
-      "app.kubernetes.io/version" : "3.3.2",
+      "app.kubernetes.io/version" : "3.4.0",
       "app.kubernetes.io/managed-by" : "quarkus"
     },
     "name" : "contestsubmission-backend"
@@ -108,9 +108,9 @@
   "metadata" : {
     "annotations" : {
       "app.quarkus.io/quarkus-version" : "3.8.1",
-      "app.quarkus.io/commit-id" : "d935ca0f8e5e5d1f80f8244559cf7f4b65eea0dd",
+      "app.quarkus.io/commit-id" : "18565d8d3e6f1b10389101981bea01cfa4a3fef2",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend.git",
-      "app.quarkus.io/build-timestamp" : "2024-03-04 - 23:11:56 +0000",
+      "app.quarkus.io/build-timestamp" : "2024-03-07 - 09:19:27 +0000",
       "prometheus.io/scrape" : "true",
       "prometheus.io/path" : "/q/metrics",
       "prometheus.io/port" : "8080",
@@ -118,7 +118,7 @@
     },
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
-      "app.kubernetes.io/version" : "3.3.2",
+      "app.kubernetes.io/version" : "3.4.0",
       "app.kubernetes.io/managed-by" : "quarkus"
     },
     "name" : "contestsubmission-backend"
@@ -134,9 +134,9 @@
       "metadata" : {
         "annotations" : {
           "app.quarkus.io/quarkus-version" : "3.8.1",
-          "app.quarkus.io/commit-id" : "d935ca0f8e5e5d1f80f8244559cf7f4b65eea0dd",
+          "app.quarkus.io/commit-id" : "18565d8d3e6f1b10389101981bea01cfa4a3fef2",
           "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend.git",
-          "app.quarkus.io/build-timestamp" : "2024-03-04 - 23:11:56 +0000",
+          "app.quarkus.io/build-timestamp" : "2024-03-07 - 09:19:27 +0000",
           "prometheus.io/scrape" : "true",
           "prometheus.io/path" : "/q/metrics",
           "prometheus.io/port" : "8080",
@@ -144,7 +144,7 @@
         },
         "labels" : {
           "app.kubernetes.io/managed-by" : "quarkus",
-          "app.kubernetes.io/version" : "3.3.2",
+          "app.kubernetes.io/version" : "3.4.0",
           "app.kubernetes.io/name" : "contestsubmission-backend"
         }
       },
@@ -163,7 +163,7 @@
               "name" : "postgres-config"
             }
           } ],
-          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:3.3.2-169",
+          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:3.4.0-173",
           "imagePullPolicy" : "Always",
           "name" : "contestsubmission-backend",
           "ports" : [ {
