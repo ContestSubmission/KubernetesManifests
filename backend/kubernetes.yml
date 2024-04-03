@@ -4,9 +4,8 @@ kind: ServiceAccount
 metadata:
   annotations:
     app.quarkus.io/quarkus-version: 3.8.1
-    app.quarkus.io/commit-id: 6fba21c8a3bd07f7a55b0e82a446a662683f4989
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend.git
-    app.quarkus.io/build-timestamp: 2024-04-03 - 09:40:38 +0000
+    app.quarkus.io/build-timestamp: 2024-04-03 - 10:00:07 +0000
   labels:
     app.kubernetes.io/name: contestsubmission-backend
     app.kubernetes.io/version: 3.4.2
@@ -64,9 +63,8 @@ kind: Service
 metadata:
   annotations:
     app.quarkus.io/quarkus-version: 3.8.1
-    app.quarkus.io/commit-id: 6fba21c8a3bd07f7a55b0e82a446a662683f4989
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend.git
-    app.quarkus.io/build-timestamp: 2024-04-03 - 09:40:38 +0000
+    app.quarkus.io/build-timestamp: 2024-04-03 - 10:00:07 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8080"
@@ -91,9 +89,8 @@ kind: Deployment
 metadata:
   annotations:
     app.quarkus.io/quarkus-version: 3.8.1
-    app.quarkus.io/commit-id: 6fba21c8a3bd07f7a55b0e82a446a662683f4989
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend.git
-    app.quarkus.io/build-timestamp: 2024-04-03 - 09:40:38 +0000
+    app.quarkus.io/build-timestamp: 2024-04-03 - 10:00:07 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8080"
@@ -112,9 +109,8 @@ spec:
     metadata:
       annotations:
         app.quarkus.io/quarkus-version: 3.8.1
-        app.quarkus.io/commit-id: 6fba21c8a3bd07f7a55b0e82a446a662683f4989
         app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend.git
-        app.quarkus.io/build-timestamp: 2024-04-03 - 09:40:38 +0000
+        app.quarkus.io/build-timestamp: 2024-04-03 - 10:00:07 +0000
         prometheus.io/scrape: "true"
         prometheus.io/path: /q/metrics
         prometheus.io/port: "8080"
@@ -133,7 +129,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: postgres-config
-          image: ghcr.io/contestsubmission/contestsubmission-backend:3.4.2-183
+          image: ghcr.io/contestsubmission/contestsubmission-backend:3.4.2-185
           imagePullPolicy: Always
           name: contestsubmission-backend
           ports:
