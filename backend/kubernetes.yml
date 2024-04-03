@@ -4,9 +4,9 @@ kind: ServiceAccount
 metadata:
   annotations:
     app.quarkus.io/quarkus-version: 3.8.1
-    app.quarkus.io/commit-id: 3ee17ac78b833fbc0a2852f2935b50a2315353bf
+    app.quarkus.io/commit-id: ee4d9ed4da9cce5a481c2518d52023c899c270c9
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend.git
-    app.quarkus.io/build-timestamp: 2024-04-03 - 13:09:24 +0000
+    app.quarkus.io/build-timestamp: 2024-04-03 - 13:14:07 +0000
   labels:
     app.kubernetes.io/name: contestsubmission-backend
     app.kubernetes.io/version: 3.4.2
@@ -64,9 +64,9 @@ kind: Service
 metadata:
   annotations:
     app.quarkus.io/quarkus-version: 3.8.1
-    app.quarkus.io/commit-id: 3ee17ac78b833fbc0a2852f2935b50a2315353bf
+    app.quarkus.io/commit-id: ee4d9ed4da9cce5a481c2518d52023c899c270c9
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend.git
-    app.quarkus.io/build-timestamp: 2024-04-03 - 13:09:24 +0000
+    app.quarkus.io/build-timestamp: 2024-04-03 - 13:14:07 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8080"
@@ -91,9 +91,9 @@ kind: Deployment
 metadata:
   annotations:
     app.quarkus.io/quarkus-version: 3.8.1
-    app.quarkus.io/commit-id: 3ee17ac78b833fbc0a2852f2935b50a2315353bf
+    app.quarkus.io/commit-id: ee4d9ed4da9cce5a481c2518d52023c899c270c9
     app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend.git
-    app.quarkus.io/build-timestamp: 2024-04-03 - 13:09:24 +0000
+    app.quarkus.io/build-timestamp: 2024-04-03 - 13:14:07 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8080"
@@ -112,9 +112,9 @@ spec:
     metadata:
       annotations:
         app.quarkus.io/quarkus-version: 3.8.1
-        app.quarkus.io/commit-id: 3ee17ac78b833fbc0a2852f2935b50a2315353bf
+        app.quarkus.io/commit-id: ee4d9ed4da9cce5a481c2518d52023c899c270c9
         app.quarkus.io/vcs-uri: https://github.com/ContestSubmission/Backend.git
-        app.quarkus.io/build-timestamp: 2024-04-03 - 13:09:24 +0000
+        app.quarkus.io/build-timestamp: 2024-04-03 - 13:14:07 +0000
         prometheus.io/scrape: "true"
         prometheus.io/path: /q/metrics
         prometheus.io/port: "8080"
@@ -133,7 +133,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: postgres-config
-          image: ghcr.io/contestsubmission/contestsubmission-backend:3.4.2-186
+          image: ghcr.io/contestsubmission/contestsubmission-backend:3.4.2-188
           imagePullPolicy: Always
           name: contestsubmission-backend
           ports:
