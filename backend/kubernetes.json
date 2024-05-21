@@ -4,9 +4,8 @@
   "metadata" : {
     "annotations" : {
       "app.quarkus.io/quarkus-version" : "3.8.1",
-      "app.quarkus.io/commit-id" : "bed01b16596c8c0f8f6b595a1aab194cade7aa33",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend.git",
-      "app.quarkus.io/build-timestamp" : "2024-05-21 - 12:17:41 +0000"
+      "app.quarkus.io/build-timestamp" : "2024-05-21 - 12:18:12 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "contestsubmission-backend",
@@ -75,9 +74,8 @@
   "metadata" : {
     "annotations" : {
       "app.quarkus.io/quarkus-version" : "3.8.1",
-      "app.quarkus.io/commit-id" : "bed01b16596c8c0f8f6b595a1aab194cade7aa33",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend.git",
-      "app.quarkus.io/build-timestamp" : "2024-05-21 - 12:17:41 +0000",
+      "app.quarkus.io/build-timestamp" : "2024-05-21 - 12:18:12 +0000",
       "prometheus.io/scrape" : "true",
       "prometheus.io/path" : "/q/metrics",
       "prometheus.io/port" : "8080",
@@ -108,9 +106,8 @@
   "metadata" : {
     "annotations" : {
       "app.quarkus.io/quarkus-version" : "3.8.1",
-      "app.quarkus.io/commit-id" : "bed01b16596c8c0f8f6b595a1aab194cade7aa33",
       "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend.git",
-      "app.quarkus.io/build-timestamp" : "2024-05-21 - 12:17:41 +0000",
+      "app.quarkus.io/build-timestamp" : "2024-05-21 - 12:18:12 +0000",
       "prometheus.io/scrape" : "true",
       "prometheus.io/path" : "/q/metrics",
       "prometheus.io/port" : "8080",
@@ -134,9 +131,8 @@
       "metadata" : {
         "annotations" : {
           "app.quarkus.io/quarkus-version" : "3.8.1",
-          "app.quarkus.io/commit-id" : "bed01b16596c8c0f8f6b595a1aab194cade7aa33",
           "app.quarkus.io/vcs-uri" : "https://github.com/ContestSubmission/Backend.git",
-          "app.quarkus.io/build-timestamp" : "2024-05-21 - 12:17:41 +0000",
+          "app.quarkus.io/build-timestamp" : "2024-05-21 - 12:18:12 +0000",
           "prometheus.io/scrape" : "true",
           "prometheus.io/path" : "/q/metrics",
           "prometheus.io/port" : "8080",
@@ -144,8 +140,8 @@
         },
         "labels" : {
           "app.kubernetes.io/managed-by" : "quarkus",
-          "app.kubernetes.io/name" : "contestsubmission-backend",
-          "app.kubernetes.io/version" : "4.3.1"
+          "app.kubernetes.io/version" : "4.3.1",
+          "app.kubernetes.io/name" : "contestsubmission-backend"
         }
       },
       "spec" : {
@@ -163,7 +159,7 @@
               "name" : "postgres-config"
             }
           } ],
-          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:4.3.1-199",
+          "image" : "ghcr.io/contestsubmission/contestsubmission-backend:4.3.1-200",
           "imagePullPolicy" : "Always",
           "name" : "contestsubmission-backend",
           "ports" : [ {
